@@ -19,7 +19,7 @@ const Banner = () => {
         <Link className='btn btn-ghost text-2xl text-red-200'> Government & Public</Link>
         <Link className='btn btn-ghost text-2xl text-red-200'> Hospitality</Link>
      </div>
-     <div className='hero'>
+     <div>
      <form className="card-body">
         <div className="form-control">
           <label className="label">
@@ -40,6 +40,11 @@ const Banner = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+
+      <h2 className='flex gap-2 mb-3'><span>Google Login</span> <span>Github Login</span></h2>
+     
+        <h2>if you do not have already account <span className='bg-white text-violet-300'><Link to='/register'>register</Link></span></h2>
+      
      </div>
    
   </div>
