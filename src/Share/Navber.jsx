@@ -1,13 +1,33 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 
 const Navber = () => {
+  const [theme,setTheme]=useState("synthwave")
     const navbarLink=<>
     <NavLink to="/" className="btn btn-ghost">Home</NavLink>
     <NavLink to="/about" className="btn btn-ghost">About</NavLink>
     <NavLink to="/projects" className="btn btn-ghost">Projects</NavLink>
     <NavLink to="/contact" className="btn btn-ghost">Contact us</NavLink>
     </>
+
+    useEffect(()=>{
+      localStorage.setItem('theme',theme)
+      const localTheme=localStorage.getItem('theme') 
+      document.querySelector('html').setAttribute('data-theme',localTheme)
+    },[theme])
+
+    const handleToggleButton=(e)=>{
+        // console.log(e.target.value)
+        if(e.target.checked){
+              setTheme("synthwave")
+        }
+        else{
+              setTheme("light")
+        }
+    }
+
+    console.log(theme)
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -32,7 +52,7 @@ const Navber = () => {
      {navbarLink}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">DreamHouse</a>
   </div>
   <div className="navbar-center hidden lg:flex ">
     <ul className="menu menu-horizontal px-1  flex gap-3">
@@ -40,8 +60,8 @@ const Navber = () => {
     </ul>
   </div>
   <div className="navbar-end flex gap-3">
-    <input type="checkbox" className="toggle toggle-primary" defaultChecked />
-    <a className="btn">Button</a>
+    <input onChange={handleToggleButton} type="checkbox" className="toggle toggle-primary" defaultChecked />
+    <a className="btn btn-ghost">Button</a>
   </div>
   
 </div>
