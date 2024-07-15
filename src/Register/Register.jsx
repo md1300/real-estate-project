@@ -1,7 +1,15 @@
+
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ContextProvider } from "../ContextApi/AuthProvider";
+
 
 
 const Register = () => {
+const context=useContext(ContextProvider)
+
+console.log(context)
+
     return (
         <div className="hero bg-base-200 min-h-screen">
         <div >
