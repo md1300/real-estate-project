@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const Banner = () => {
   const [showPassword,setShowPassword]=useState('')
-  const {logIn}=useContext(ContextProvider)
+  const {logIn,googleLogIn}=useContext(ContextProvider)
 
   const handleLogInButton=(e)=>{
     e.preventDefault()
@@ -28,6 +28,13 @@ const Banner = () => {
     })
 
     console.log(email,password,logIn)
+  }
+
+
+
+  const handleGoogleLogIn=()=>{
+    googleLogIn()
+
   }
 
 
@@ -77,7 +84,10 @@ const Banner = () => {
         </div>
       </form>
 
-      <h2 className='flex gap-2 mb-3'><span className='btn btn-link'>Google Login</span> <span className='btn btn-link'>Github Login</span></h2>
+      <h2 className='flex gap-2 mb-3'>
+        <span onClick={handleGoogleLogIn} className='btn btn-link'>Google Login</span> 
+        <span className='btn btn-link'> gitHub logIn</span> 
+      </h2>
      
         <h2>if you do not have already account <span className='bg-zinc-800 text-white  text-xl btn btn-link'><Link to='/register'>register</Link></span></h2>
       
