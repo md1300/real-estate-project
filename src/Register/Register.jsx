@@ -6,6 +6,9 @@ import { ContextProvider } from "../ContextApi/AuthProvider";
 import { FaEye } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
 
+import toast, { Toaster } from 'react-hot-toast';
+
+
 const Register = () => {
   const [showPassword,setShowPassword]=useState('')
   const [signUpError,setSignUpError]=useState('')
@@ -46,8 +49,18 @@ else if(!/[a-z]/.test(password)){
 
 
     createUser(email,password)
+    .then(result=>{ 
+      toast('successfully register.')
+      console.log(result.user)
+      
+    })
+    .catch(error=>{
+      toast("already use this mail")
+      console.log(error.message)
+      
+    })
 
-    console.log(name,email,password,url,createUser)
+    // console.log(,url,createUser)
 
     
  
@@ -55,6 +68,7 @@ else if(!/[a-z]/.test(password)){
 
     return (
         <div >
+          <Toaster />
         <div className="hero bg-base-200 min-h-screen" >
           <div className="text-center my-4 ">
             <h1 className="text-5xl font-bold">Register Now</h1>
