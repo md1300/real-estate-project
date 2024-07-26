@@ -1,11 +1,21 @@
 
 // import { useContext } from "react";
-import { useContext } from "react";
+import { useContext,  useState } from "react";
 import { Link } from "react-router-dom";
 import { ContextProvider } from "../ContextApi/AuthProvider";
+import { FaEye } from "react-icons/fa";
 
 const Register = () => {
+  const [showPassword,setShowPassword]=useState('')
+  const [signUpError,setSignUpError]=useState('')
+  const [success,setSuccess]=useState('')
+  // const ref=useRef()
 const {createUser}=useContext(ContextProvider)
+
+
+
+
+
 const handleRegisterForm=e=>{
     e.preventDefault()
     const name=e.target.name.value ;
@@ -13,15 +23,38 @@ const handleRegisterForm=e=>{
     const password=e.target.password.value ;
     const url=e.target.photoURL.value ;
 
+    setSignUpError('')
+    
+
+if(password.length<6){
+  console.log("please provide minimume eight character")
+  setSignUpError('provide minimum  eight character')
+  return
+}
+else if(!/[A-Z]/.test(password)){
+ console.log('minimum one capital letter')
+ setSignUpError('minimum one capital letter')
+ return
+}
+else if(!/[a-z]/.test(password)){
+  console.log('minimun  one small letter')
+  setSignUpError('minimun  one small letter')  
+  return 
+}
+
+
+
     createUser(email,password)
 
     console.log(name,email,password,url,createUser)
+
+    
  
 }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
         <div >
+        <div className="hero bg-base-200 min-h-screen" >
           <div className="text-center my-4 ">
             <h1 className="text-5xl font-bold">Register Now</h1>
            
@@ -50,7 +83,10 @@ const handleRegisterForm=e=>{
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="password" placeholder="password" className="input input-bordered" name="password" required />
+                <div  className="relative">
+                <input type={showPassword? "text":"password"} placeholder="password" className="input input-bordered" name="password" required />
+                <button className="btn btn-link absolute " onClick={()=>setShowPassword(!showPassword)}> <FaEye /></button> 
+                </div>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
@@ -62,7 +98,7 @@ const handleRegisterForm=e=>{
             <p>if you have already account <span className="btn btn-link"><Link to="/">Log in</Link></span></p>
           </div>
         </div>
-        
+        <p>{signUpError}</p>
       </div>
     );
 };
