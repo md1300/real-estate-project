@@ -4,6 +4,7 @@ import { useContext,  useState } from "react";
 import { Link } from "react-router-dom";
 import { ContextProvider } from "../ContextApi/AuthProvider";
 import { FaEye } from "react-icons/fa";
+import { IoMdEyeOff } from "react-icons/io";
 
 const Register = () => {
   const [showPassword,setShowPassword]=useState('')
@@ -83,9 +84,9 @@ else if(!/[a-z]/.test(password)){
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <div  className="relative">
-                <input type={showPassword? "text":"password"} placeholder="password" className="input input-bordered" name="password" required />
-                <button className="btn btn-link absolute " onClick={()=>setShowPassword(!showPassword)}> <FaEye /></button> 
+                <div  className="join">
+                <input type={showPassword? "text":"password"} placeholder="password" className="input input-bordered join-item" name="password" required />
+                <button className="join join-item items-center" onClick={()=>setShowPassword(!showPassword)}> {showPassword?<IoMdEyeOff />:<FaEye /> }</button> 
                 </div>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
