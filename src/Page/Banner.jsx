@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom';
 import backgroundImage from '../image/banner.jpg'
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { FaEye } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
 import { ContextProvider } from '../ContextApi/AuthProvider';
 
 import { ToastContainer, toast } from 'react-toastify';
 
+
+
 const Banner = () => {
   const [showPassword,setShowPassword]=useState('')
-  const {logIn,googleLogIn}=useContext(ContextProvider)
+  const {logIn,googleLogIn,githubLogin}=useContext(ContextProvider)
+  
 
   const handleLogInButton=(e)=>{
     e.preventDefault()
@@ -34,8 +37,15 @@ const Banner = () => {
 
   const handleGoogleLogIn=()=>{
     googleLogIn()
-
   }
+
+  const handleGithubLogIn=()=>{
+    githubLogin()
+  }
+
+
+  
+  
 
 
     return (
@@ -86,7 +96,7 @@ const Banner = () => {
 
       <h2 className='flex gap-2 mb-3'>
         <span onClick={handleGoogleLogIn} className='btn btn-link'>Google Login</span> 
-        <span className='btn btn-link'> gitHub logIn</span> 
+        <span onClick={handleGithubLogIn} className='btn btn-link'> gitHub logIn</span> 
       </h2>
      
         <h2>if you do not have already account <span className='bg-zinc-800 text-white  text-xl btn btn-link'><Link to='/register'>register</Link></span></h2>
@@ -94,6 +104,7 @@ const Banner = () => {
      </div>
    
   </div>
+ 
 </div>
 
 

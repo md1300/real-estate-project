@@ -1,0 +1,188 @@
+ [
+      {
+        "id": "001",
+        "estate_title": "Luxurious 3-Bedroom Apartment in Downtown",
+        "segment_name": "Residential",
+        "description": "Experience luxury living in this spacious 3-bedroom apartment located in the heart of downtown. With modern amenities and stunning city views, this property is perfect for those who appreciate the finer things in life.",
+        "price": "$850,000",
+        "status": "sale",
+        "area": "2000 sq ft",
+        "location": "123 City Center Ave, Downtown, NY",
+        "facilities": [
+          "living room",
+          "swimming pool",
+          "kitchen",
+          "gym",
+          "rooftop terrace"
+        ],
+        "year_built": 2020,
+        "parking_spaces": 2,
+        "nearby_schools": ["Downtown High School", "City Center College"],
+        "image_url": "https://i.ibb.co/TwC9bh9/photorealistic-house-with-wooden-architecture-timber-structure.jpg"
+      },
+      {
+        "id": "002",
+        "estate_title": "Charming 2-Bedroom Cottage in Suburbia",
+        "segment_name": "Residential",
+        "description": "A cozy 2-bedroom cottage situated in a peaceful suburban neighborhood. Ideal for families looking for a quiet retreat with easy access to local amenities and parks.",
+        "price": "$320,000",
+        "status": "rent",
+        "area": "1200 sq ft",
+        "location": "456 Maple Street, Suburbia, TX",
+        "facilities": [
+          "living room",
+          "kitchen",
+          "garden",
+          "garage"
+        ],
+        "year_built": 1995,
+        "parking_spaces": 1,
+        "nearby_schools": ["Suburbia Elementary", "Suburbia Middle School"],
+        "image_url": "https://i.ibb.co/pwNfR86/3d-rendering-white-wood-living-room-near-bedroom-upstair.jpg"
+      },
+      {
+        "id": "003",
+        "estate_title": "Modern 4-Bedroom House with Private Pool",
+        "segment_name": "Residential",
+        "description": "This stunning 4-bedroom house features a private pool, spacious living areas, and modern finishes. Located in a gated community with 24/7 security, it's perfect for those seeking a high-end lifestyle.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "3000 sq ft",
+        "location": "789 Luxury Lane, Greenfield, CA",
+        "facilities": [
+          "living room",
+          "swimming pool",
+          "kitchen",
+          "home theater",
+          "patio"
+        ],
+        "year_built": 2018,
+        "parking_spaces": 3,
+        "nearby_schools": ["Greenfield High School", "Greenfield Academy"],
+        "image_url": "https://i.ibb.co/GxTp4FJ/2151264503.jpg"
+      },
+      {
+        "id": "004",
+        "estate_title": "Cozy 1-Bedroom Apartment Near the Park",
+        "segment_name": "Residential",
+        "description": "This 1-bedroom apartment offers a cozy and comfortable living space with easy access to a nearby park. Perfect for young professionals or couples looking for a convenient urban living experience.",
+        "price": "$250,000",
+        "status": "rent",
+        "area": "800 sq ft",
+        "location": "321 Park Ave, Midtown, FL",
+        "facilities": [
+          "living room",
+          "kitchen",
+          "balcony",
+          "parking"
+        ],
+        "year_built": 2015,
+        "parking_spaces": 1,
+        "nearby_schools": ["Midtown High School"],
+        "image_url": "https://i.ibb.co/hyjB5JD/woman-showing-with-one-hand-mini-house-real-state-concept-ai-generative.jpg"
+      },
+      {
+        "id": "005",
+        "estate_title": "Elegant 5-Bedroom Villa with Garden",
+        "segment_name": "Residential",
+        "description": "This elegant 5-bedroom villa features a beautifully landscaped garden, large living spaces, and high-end finishes. Located in an exclusive neighborhood, it offers both luxury and privacy.",
+        "price": "$2,500,000",
+        "status": "sale",
+        "area": "4000 sq ft",
+        "location": "654 Royal Drive, Beverly Hills, CA",
+        "facilities": [
+          "living room",
+          "garden",
+          "kitchen",
+          "home office",
+          "wine cellar"
+        ],
+        "year_built": 2022,
+        "parking_spaces": 4,
+        "nearby_schools": ["Beverly Hills High School"],
+        "image_url": "https://i.ibb.co/hL98fbc/16608481-2103-i518-019-suburban-house.jpg"
+      },
+      {
+        "id": "006",
+        "estate_title": "Spacious 3-Bedroom Apartment with City Views",
+        "segment_name": "Residential",
+        "description": "Enjoy stunning city views from this spacious 3-bedroom apartment. Located in a high-rise building with premium amenities including a gym and rooftop lounge.",
+        "price": "$950,000",
+        "status": "sale",
+        "area": "2200 sq ft",
+        "location": "789 Skyline Blvd, Metropolis, IL",
+        "facilities": [
+          "living room",
+          "kitchen",
+          "gym",
+          "rooftop lounge"
+        ],
+        "year_built": 2019,
+        "parking_spaces": 2,
+        "nearby_schools": ["Metropolis High School"],
+        "image_url": "https://i.ibb.co/pwNfR86/3d-rendering-white-wood-living-room-near-bedroom-upstair.jpg"
+      },
+      {
+        "id": "007",
+        "estate_title": "Quaint 2-Bedroom House with Large Backyard",
+        "segment_name": "Residential",
+        "description": "A quaint 2-bedroom house with a large backyard, perfect for families or those who enjoy gardening and outdoor activities. Located in a friendly neighborhood with good schools nearby.",
+        "price": "$350,000",
+        "status": "rent",
+        "area": "1500 sq ft",
+        "location": "112 Maple Ave, Oakville, NJ",
+        "facilities": [
+          "living room",
+          "kitchen",
+          "backyard",
+          "garage"
+        ],
+        "year_built": 2000,
+        "parking_spaces": 2,
+        "nearby_schools": ["Oakville Elementary School", "Oakville Middle School"],
+        "image_url": "https://i.ibb.co/GxTp4FJ/2151264503.jpg"
+      },
+      {
+        "id": "008",
+        "estate_title": "Contemporary 4-Bedroom House with Smart Features",
+        "segment_name": "Residential",
+        "description": "This contemporary 4-bedroom house comes equipped with smart home technology, including automated lighting and security systems. Ideal for tech-savvy buyers looking for modern convenience.",
+        "price": "$1,100,000",
+        "status": "sale",
+        "area": "2800 sq ft",
+        "location": "987 Tech Road, Silicon Valley, CA",
+        "facilities": [
+          "living room",
+          "kitchen",
+          "smart home system",
+          "office",
+          "patio"
+        ],
+        "year_built": 2021,
+        "parking_spaces": 3,
+        "nearby_schools": ["Silicon Valley High School"],
+        "image_url": "https://i.ibb.co/hyjB5JD/woman-showing-with-one-hand-mini-house-real-state-concept-ai-generative.jpg"
+      },
+      {
+        "id": "009",
+        "estate_title": "Rustic 3-Bedroom Cabin in the Woods",
+        "segment_name": "Residential",
+        "description": "Escape to this rustic 3-bedroom cabin surrounded by nature. Featuring a cozy interior and large windows to enjoy the natural surroundings, this property is perfect for nature lovers and those seeking tranquility.",
+        "price": "$500,000",
+        "status": "rent",
+        "area": "1800 sq ft",
+        "location": "555 Forest Lane, Timberwood, CO",
+        "facilities": [
+          "living room",
+          "kitchen",
+          "fireplace",
+          "deck"
+        ],
+        "year_built": 1990,
+        "parking_spaces": 2,
+        "nearby_schools": ["Timberwood High School"],
+        "image_url": "https://i.ibb.co/hL98fbc/16608481-2103-i518-019-suburban-house.jpg"
+      }
+    ]
+  
+  
