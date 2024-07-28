@@ -7,6 +7,8 @@ import { FaEye } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
 
 import toast, { Toaster } from 'react-hot-toast';
+import Navber from "../Share/Navber";
+import Footer from "../Share/Footer";
 
 
 const Register = () => {
@@ -68,6 +70,7 @@ else if(!/[a-z]/.test(password)){
 
     return (
         <div >
+          <Navber></Navber>
           <Toaster />
         <div className="hero bg-base-200 min-h-screen" >
           <div className="text-center my-4 ">
@@ -114,6 +117,7 @@ else if(!/[a-z]/.test(password)){
           </div>
         </div>
         <p>{signUpError}</p>
+        <Footer></Footer>
       </div>
     );
 };
