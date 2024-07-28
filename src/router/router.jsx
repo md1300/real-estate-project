@@ -5,12 +5,14 @@ import Register from "../Register/Register";
 import NotFound from "../NotFound/NotFound";
 import NotReach from "../NotReach/NotReach";
 import Details from "../Page/Details";
+import NotFind from "../NotFind/NotFind";
 
 
 
 const router = createBrowserRouter([
     {
         path:"/",
+        errorElement:<NotFind/>,
         element:<Root></Root>,
     },
      
