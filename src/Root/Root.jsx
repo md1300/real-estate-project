@@ -1,3 +1,4 @@
+
 import EstateData from "../estateData/EstateData";
 import Banner from "../Page/Banner";
 import Footer from "../Share/Footer";
@@ -11,6 +12,7 @@ const Root = () => {
             <Banner></Banner>
             <EstateData></EstateData>
             <Footer></Footer>
+            
         </div>
     );
 };

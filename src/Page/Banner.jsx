@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
-import backgroundImage from '../image/banner.jpg'
-import { useContext, useEffect, useState } from 'react';
+
+import { useContext,  useState } from 'react';
 import { FaEye } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
 import { ContextProvider } from '../ContextApi/AuthProvider';
 
 import { ToastContainer, toast } from 'react-toastify';
+
+import image from '../image/banner.jpg'
 
 
 
@@ -49,34 +51,38 @@ const Banner = () => {
 
 
     return (
-<div
-  className="hero min-h-screen"
-  style={{backgroundImage:`url(${backgroundImage})`}} >
-  <div className="hero-overlay bg-opacity-60 "></div>
-  <div><ToastContainer /></div>
+      <>
+      <div className='relative'>
+      <div className="carousel w-full">
+  <div
+   id="item1" 
+   className="carousel-item w-full min-h-screen bg-cover bg-no-repeat"
+   style={{backgroundImage:`url(${image})`}}>
+    <div className="carousel-overlay bg-opacity-60 "></div>
+    <div><ToastContainer /></div>
   
-   <div className='md:flex gap-72 items-center'>
+    <div className='md:flex gap-72 items-center absolute'>
      <div className='flex flex-col'>
-        <Link to="/blank" className='btn btn-ghost text-2xl text-red-200'> Residential</Link>
-        <Link to="/blank" className='btn btn-ghost text-2xl text-red-200'> Commercial</Link>
-        <Link to="/blank" className='btn btn-ghost text-2xl text-red-200'> Land</Link>
-        <Link to="/blank" className='btn btn-ghost text-2xl text-red-200'> Industrial</Link>
-        <Link to="/blank" className='btn btn-ghost text-2xl text-red-200'> Speciality</Link>
-        <Link to="/blank" className='btn btn-ghost text-2xl text-red-200'> Luxury</Link>
-        <Link to="/blank" className='btn btn-ghost text-2xl text-red-200'> Government & Public</Link>
-        <Link to="/blank" className='btn btn-ghost text-2xl text-red-200'> Hospitality</Link>
+        <Link to="/blank" className='btn btn-ghost text-2xl text-black'> Residential</Link>
+        <Link to="/blank" className='btn btn-ghost text-2xl text-black'> Commercial</Link>
+        <Link to="/blank" className='btn btn-ghost text-2xl text-black'> Land</Link>
+        <Link to="/blank" className='btn btn-ghost text-2xl text-black'> Industrial</Link>
+        <Link to="/blank" className='btn btn-ghost text-2xl text-black'> Speciality</Link>
+        <Link to="/blank" className='btn btn-ghost text-2xl text-black'> Luxury</Link>
+        <Link to="/blank" className='btn btn-ghost text-2xl text-black'> Government & Public</Link>
+        <Link to="/blank" className='btn btn-ghost text-2xl text-black'> Hospitality</Link>
      </div>
      <div>
      <form  onSubmit={handleLogInButton} className="card-body">
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text text-black">Email</span>
           </label>
           <input type="email" placeholder="email" className="input input-bordered" name='email' required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Password</span>
+            <span className="label-text text-black">Password</span>
           </label>
 
           <div className='join'>
@@ -86,7 +92,7 @@ const Banner = () => {
 
           
           <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+            <a href="#" className="label-text-alt link link-hover text-black">Forgot password?</a>
           </label>
         </div>
         <div className="form-control mt-6">
@@ -99,20 +105,43 @@ const Banner = () => {
         <span onClick={handleGithubLogIn} className='btn btn-link'> gitHub logIn</span> 
       </h2>
      
-        <h2>if you do not have already account <span className='bg-zinc-800 text-white  text-xl btn btn-link'><Link to='/register'>register</Link></span></h2>
+        <h2 className='text-black'>if you do not have already account <span className='bg-zinc-800 text-white  text-xl btn btn-link'><Link to='/register'>register</Link></span></h2>
       
      </div>
    
   </div>
- 
+
+
+
+  </div>
+
+
+  <div id="item2" className="carousel-item w-full bg-cover bg-no-repeat"
+  style={{backgroundImage:'url("https://i.ibb.co/m0NTvkw/2150799701.jpg")'}}> 
+  </div>
+  <div id="item3" className="carousel-item w-full bg-cover bg-no-repeat"
+  style={{backgroundImage:'url("https://i.ibb.co/PZLnjPW/2150799695.jpg ")'}}> 
+  </div>
+
+
+  <div id="item4" className=" carousel-item  w-full bg-cover  bg-no-repeat"
+  style={{backgroundImage:'url("https://i.ibb.co/xDDXY06/2150799725.jpg")'}}>
+   
+   
+  </div>
 </div>
+<div className="flex w-full justify-center gap-2 py-2">
+  <a href="#item1" className="btn btn-xs">1</a>
+  <a href="#item2" className="btn btn-xs">2</a>
+  <a href="#item3" className="btn btn-xs">3</a>
+  <a href="#item4" className="btn btn-xs">4</a>
+</div>
+      </div>
 
-
-
-
-      
+</>  
   
     );
 };
 
 export default Banner;
+
