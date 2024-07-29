@@ -6,6 +6,8 @@ import NotFound from "../NotFound/NotFound";
 import NotReach from "../NotReach/NotReach";
 import Details from "../Page/Details";
 import NotFind from "../NotFind/NotFind";
+import LogIn from "../LogIn/LogIn";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -32,7 +34,11 @@ const router = createBrowserRouter([
     {
         path:"/details/:id",
         loader:()=>fetch('/estateData.json'),
-        element:<Details></Details>
+        element:<PrivateRoute><Details></Details></PrivateRoute>
+    },
+    {
+        path:"/logIn",
+        element:<LogIn></LogIn>
     }
 ])
    

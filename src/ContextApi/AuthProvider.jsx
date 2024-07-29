@@ -15,17 +15,21 @@ export const ContextProvider=createContext(null)
 
   const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null)
+    const [loading,setLoading]=useState(true)
 
     const createUser=(email,password)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
     const logIn=(email,password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
 
 
     const googleLogIn=()=>{
+        setLoading(true)
         signInWithPopup(auth, googleProvider)
         .then(result=>{
             console.log(result.user)
@@ -37,6 +41,7 @@ export const ContextProvider=createContext(null)
           })
     }
     const githubLogin=()=>{
+        setLoading(true)
         signInWithPopup(auth, githubProvider)
         .then(result=>{
             // toast("successfully log in github")
@@ -52,10 +57,12 @@ export const ContextProvider=createContext(null)
     }
     
     const logOut=()=>{
+        setLoading(true)
        return signOut(auth)
     }
 
     const updateUserProfile=(name,url)=>{
+        setLoading(true)
         updateProfile(auth.currentUser, {
             displayName : name,
              photoURL: url
@@ -64,7 +71,7 @@ export const ContextProvider=createContext(null)
     
     useEffect(()=>{
         const unsubscribe =onAuthStateChanged(auth,currentUser=>{
-
+             setLoading(false)
             setUser(currentUser)
             console.log('this is current user information',currentUser)
         })
@@ -73,7 +80,7 @@ export const ContextProvider=createContext(null)
         }
     },[])
 
-    const authInfo ={name:"this is tawhid", user,createUser,logIn,googleLogIn,logOut, githubLogin , updateUserProfile  }
+    const authInfo ={name:"this is tawhid", user,createUser,logIn,googleLogIn,logOut, githubLogin , updateUserProfile,loading  }
 
 
     return (

@@ -19,9 +19,6 @@ const Register = () => {
 const {createUser,updateUserProfile}=useContext(ContextProvider)
 
 
-
-
-
 const handleRegisterForm=e=>{
     e.preventDefault()
     const name=e.target.name.value ;
