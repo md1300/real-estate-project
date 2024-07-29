@@ -16,7 +16,7 @@ const Register = () => {
   const [signUpError,setSignUpError]=useState('')
   const [success,setSuccess]=useState('')
   // const ref=useRef()
-const {createUser}=useContext(ContextProvider)
+const {createUser,updateUserProfile}=useContext(ContextProvider)
 
 
 
@@ -31,6 +31,7 @@ const handleRegisterForm=e=>{
 
     setSignUpError('')
     
+
 
 if(password.length<6){
   console.log("please provide minimume eight character")
@@ -51,10 +52,15 @@ else if(!/[a-z]/.test(password)){
 
 
     createUser(email,password)
+    
     .then(result=>{ 
+        
+      updateUserProfile(name,url)
+
       toast('successfully register.')
+
       console.log(result.user)
-      
+       
     })
     .catch(error=>{
       toast("already use this mail")

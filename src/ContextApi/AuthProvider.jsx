@@ -1,6 +1,6 @@
 import {  toast } from 'react-toastify';
-import { createUserWithEmailAndPassword,  GithubAuthProvider,  signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { createContext, useState } from "react";
+import { createUserWithEmailAndPassword,  GithubAuthProvider,  onAuthStateChanged,  signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.confige";
 
 import { GoogleAuthProvider } from "firebase/auth";
@@ -51,9 +51,31 @@ export const ContextProvider=createContext(null)
         })
     }
     
-    
+    const logOut=()=>{
+       return signOut(auth)
+    }
 
-    const authInfo ={name:"this is tawhid", user,createUser,logIn,googleLogIn,githubLogin }
+    const updateUserProfile=(name,url)=>{
+        updateProfile(auth.currentUser, {
+            displayName : name,
+             photoURL: url
+          })
+    }
+    
+    useEffect(()=>{
+        const unsubscribe =onAuthStateChanged(auth,currentUser=>{
+
+            setUser(currentUser)
+            console.log('this is current user information',currentUser)
+        })
+        return ()=>{
+            unsubscribe()
+        }
+    },[])
+
+    const authInfo ={name:"this is tawhid", user,createUser,logIn,googleLogIn,logOut, githubLogin , updateUserProfile  }
+
+
     return (
         <ContextProvider.Provider  value={authInfo}>
             {children}

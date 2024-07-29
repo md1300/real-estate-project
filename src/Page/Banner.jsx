@@ -27,7 +27,7 @@ const Banner = () => {
       console.log(result.user)
       toast('wellcome here')
     })
-    .then(error=>{
+    .catch(error=>{
       toast('already log in')
       console.log(error.message)
     })
@@ -59,7 +59,10 @@ const Banner = () => {
    className="carousel-item w-full min-h-screen bg-cover bg-no-repeat"
    style={{backgroundImage:`url(${image})`}}>
     <div className="carousel-overlay bg-opacity-60 "></div>
-    <div><ToastContainer /></div>
+    <div>
+    <ToastContainer />
+
+    </div>
   
     <div className='md:flex gap-72 items-center absolute'>
      <div className='flex flex-col'>

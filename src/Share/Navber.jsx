@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ContextProvider } from "../ContextApi/AuthProvider";
 
 
 const Navber = () => {
+  const {user,logOut}=useContext(ContextProvider)
   const [theme,setTheme]=useState("synthwave")
     const navbarLink=<>
     <NavLink to="/" className="btn btn-ghost">Home</NavLink>
@@ -10,6 +12,11 @@ const Navber = () => {
     <NavLink to="/projects" className="btn btn-ghost">Projects</NavLink>
     <NavLink to="/contact" className="btn btn-ghost">Contact us</NavLink>
     </>
+  
+
+   const handleLogOutButton=()=>{
+    logOut()
+   }
 
     useEffect(()=>{
       localStorage.setItem('theme',theme)
@@ -61,7 +68,27 @@ const Navber = () => {
   </div>
   <div className="navbar-end flex gap-3">
     <input onChange={handleToggleButton} type="checkbox" className="toggle toggle-primary" defaultChecked />
-    <a className="btn btn-ghost">Button</a>
+    <>{
+      user?<div className="flex gap-2 items-center">
+        <div className="tooltip tooltip-bottom tooltip-success " data-tip={user.email}>
+         
+           <div className="avatar">
+  
+           <div className=" w-16 rounded-full">
+
+              <img src={user.photoURL} />
+
+             </div>
+             </div>
+        </div>
+       
+<button onClick={handleLogOutButton} className="btn btn-ghost">LogOut</button>
+      </div>:<div>
+        <button className="btn btn-ghost">SignIn</button>
+      </div>
+    }
+    </>
+    
   </div>
   
 </div>
