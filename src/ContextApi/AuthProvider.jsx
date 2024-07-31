@@ -17,6 +17,8 @@ export const ContextProvider=createContext(null)
     const [user,setUser]=useState(null)
     const [loading,setLoading]=useState(true)
 
+  
+
     const createUser=(email,password)=>{
         setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
@@ -34,10 +36,12 @@ export const ContextProvider=createContext(null)
         .then(result=>{
             console.log(result.user)
             toast("google log in successfully")
+            
           })
           .catch(error=>{
             console.log(error.message)
-            toast("already log in")
+          toast("already log in")
+            
           })
     }
     const githubLogin=()=>{
@@ -80,7 +84,7 @@ export const ContextProvider=createContext(null)
         }
     },[])
 
-    const authInfo ={name:"this is tawhid", user,createUser,logIn,googleLogIn,logOut, githubLogin , updateUserProfile,loading  }
+    const authInfo ={ user,createUser,logIn,googleLogIn,logOut, githubLogin , updateUserProfile,loading,  }
 
 
     return (

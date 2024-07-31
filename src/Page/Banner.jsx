@@ -11,6 +11,7 @@ import image from '../image/banner.jpg'
 
 
 
+
 const Banner = () => {
   const [showPassword,setShowPassword]=useState('')
   const {logIn,googleLogIn,githubLogin}=useContext(ContextProvider)
@@ -25,14 +26,14 @@ const Banner = () => {
     logIn(email,password)
     .then(result=>{
       console.log(result.user)
-      toast('wellcome here')
+    toast('wellcome here')
     })
     .catch(error=>{
-      toast('already log in')
+     "toast(error.message)"
       console.log(error.message)
     })
 
-    console.log(email,password,logIn)
+    // console.log(email,password,logIn)
   }
 
 
@@ -46,12 +47,9 @@ const Banner = () => {
   }
 
 
-  
-  
-
-
     return (
       <>
+      <ToastContainer className='absolute'></ToastContainer>
       <div className='relative'>
       <div className="carousel w-full">
   <div
@@ -60,7 +58,7 @@ const Banner = () => {
    style={{backgroundImage:`url(${image})`}}>
     <div className="carousel-overlay bg-opacity-60 "></div>
     <div>
-    <ToastContainer />
+    
 
     </div>
   
@@ -140,7 +138,7 @@ const Banner = () => {
   <a href="#item4" className="btn btn-xs">4</a>
 </div>
       </div>
-
+  
 </>  
   
     );

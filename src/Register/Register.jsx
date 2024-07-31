@@ -1,7 +1,7 @@
 
 // import { useContext } from "react";
 import { useContext,  useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ContextProvider } from "../ContextApi/AuthProvider";
 import { FaEye } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
@@ -14,8 +14,10 @@ import Footer from "../Share/Footer";
 const Register = () => {
   const [showPassword,setShowPassword]=useState('')
   const [signUpError,setSignUpError]=useState('')
-  const [success,setSuccess]=useState('')
-  // const ref=useRef()
+  // const [success,setSuccess]=useState('')
+
+const navigate=useNavigate()
+ 
 const {createUser,updateUserProfile}=useContext(ContextProvider)
 
 
@@ -53,28 +55,28 @@ else if(!/[a-z]/.test(password)){
     .then(result=>{ 
         
       updateUserProfile(name,url)
-
       toast('successfully register.')
 
-      console.log(result.user)
+      navigate('/')
+
+      
        
     })
     .catch(error=>{
-      toast("already use this mail")
-      console.log(error.message)
+      toast(error.message)
+      
       
     })
 
     // console.log(,url,createUser)
 
-    
- 
 }
 
     return (
         <div >
+         <Toaster />
           <Navber></Navber>
-          <Toaster />
+         
         <div className="hero bg-base-200 min-h-screen" >
           <div className="text-center my-4 ">
             <h1 className="text-5xl font-bold">Register Now</h1>
@@ -104,7 +106,7 @@ else if(!/[a-z]/.test(password)){
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <div  className="join">
+                <div  className="">
                 <input type={showPassword? "text":"password"} placeholder="password" className="input input-bordered join-item" name="password" required />
                 <button className="join join-item items-center" onClick={()=>setShowPassword(!showPassword)}> {showPassword?<IoMdEyeOff />:<FaEye /> }</button> 
                 </div>

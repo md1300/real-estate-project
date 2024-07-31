@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LogIn from "../LogIn/LogIn";
 
 
 const ShowEstateDate = ({showDatum}) => {
@@ -26,6 +27,7 @@ const ShowEstateDate = ({showDatum}) => {
     </div>
       </div>
  </div>
+ 
         </div>
        
     );
