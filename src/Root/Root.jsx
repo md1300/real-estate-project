@@ -1,4 +1,4 @@
-
+import Card from "../Card/Card";
 import EstateData from "../estateData/EstateData";
 import Banner from "../Page/Banner";
 import Footer from "../Share/Footer";
@@ -10,9 +10,9 @@ const Root = () => {
         <div className="mx-3">
             <Navber></Navber>
             <Banner></Banner>
+            <Card></Card>
             <EstateData></EstateData>
-            <Footer></Footer>
-            
+            <Footer></Footer>    
         </div>
     );
 };

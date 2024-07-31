@@ -8,6 +8,7 @@ import Details from "../Page/Details";
 import NotFind from "../NotFind/NotFind";
 import LogIn from "../LogIn/LogIn";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Map from "../Map/Map";
 
 
 
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
     {
         path:"/logIn",
         element:<LogIn></LogIn>
-    }
+    },
+    {
+         path:"/map",
+         element:<Map></Map>
+    },
 ])
    
 export default router;
